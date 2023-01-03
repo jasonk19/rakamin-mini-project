@@ -1,41 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { useParams } from "react-router";
 import Loader from "../Components/Loader";
+import useAxiosGet from "../Hooks/HttpRequest";
 
 const Product = () => {
   const { id } = useParams();
   const url = process.env.REACT_APP_API_URL + `products/${id}`;
-  const [product, setProduct] = useState({
-    loading: false,
-    data: null,
-    error: false,
-  });
 
-  useEffect(() => {
-    const getProduct = async () => {
-      setProduct({
-        loading: true,
-        data: null,
-        error: false,
-      });
-      try {
-        const response = await axios.get(url);
-        setProduct({
-          loading: false,
-          data: response.data,
-          error: false,
-        });
-      } catch (error) {
-        setProduct({
-          loading: false,
-          data: null,
-          error: true,
-        });
-      }
-    };
-    getProduct();
-  }, [url]);
+  let product = useAxiosGet(url);
 
   let content = null;
 
