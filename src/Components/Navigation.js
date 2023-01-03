@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useTransition, animated } from "@react-spring/web";
+import { Link } from "react-router-dom";
+import NavigationMenu from "./NavigationMenu";
 
 const Navigation = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -45,10 +47,7 @@ const Navigation = () => {
               style={style}
               className="fixed bg-white top-0 left-0 w-4/5 h-full z-50 p-3"
             >
-              <span className="font-bold">Menu</span>
-              <ul>
-                <li>Home</li>
-              </ul>
+              <NavigationMenu classMenu={() => setShowMenu(false)} />
             </animated.div>
           )
       )}
