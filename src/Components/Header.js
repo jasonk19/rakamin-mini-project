@@ -1,10 +1,13 @@
 import React from "react";
+import Navigation from "./Navigation";
 
 const Header = () => {
   return (
-    <div className="border-b p-3 font-bold">
-      <h1>Rakamin Mini Project</h1>
-    </div>
+    <header className="border-b p-3 flex justify-between items-center">
+      <h1 className="font-bold">Rakamin Mini Project</h1>
+
+      <Navigation />
+    </header>
   );
 };
 
