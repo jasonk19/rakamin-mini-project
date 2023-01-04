@@ -24,6 +24,15 @@ const NavigationMenu = (props) => {
             About
           </Link>
         </li>
+        <li>
+          <Link
+            to="/products"
+            onClick={props.classMenu}
+            className="text-blue-500 py-3 border-b block"
+          >
+            Products
+          </Link>
+        </li>
       </ul>
     </div>
   );
