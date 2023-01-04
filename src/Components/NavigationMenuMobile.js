@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import useMobile from "../Hooks/PageSize";
 
-const NavigationMenu = (props) => {
+const NavigationMenuMobile = (props) => {
   return (
     <div>
       <p className="font-bold py-3">Rakamin Mini Project</p>
@@ -38,4 +39,4 @@ const NavigationMenu = (props) => {
   );
 };
 
-export default NavigationMenu;
+export default NavigationMenuMobile;
