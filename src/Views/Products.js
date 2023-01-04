@@ -1,10 +1,12 @@
 import Loader from "../Components/Loader";
 import ProductCard from "../Components/ProductCard";
 import useAxiosGet from "../Hooks/HttpRequest";
+import useMobile from "../Hooks/PageSize";
 
 const Products = () => {
   const url = process.env.REACT_APP_API_URL + `products?page=1&limit=10`;
 
+  let isMobile = useMobile();
   let products = useAxiosGet(url);
 
   let content = null;
@@ -19,7 +21,7 @@ const Products = () => {
 
   if (products.data) {
     content = (
-      <div className="grid grid-cols-3 gap-3">
+      <div className={isMobile ? "" : "grid grid-cols-3 gap-3"}>
         {products.data.map((product) => (
           <div key={product.id}>
             <ProductCard product={product} />
