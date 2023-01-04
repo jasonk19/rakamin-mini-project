@@ -26,7 +26,7 @@ const Post = () => {
     const user = users.data.find((user) => user.id === post.data.userId);
     content = (
       <div>
-        <div className="border p-2">
+        <div className="border p-2 md:w-1/3 md:mx-auto">
           <p className="font-bold text-center mb-1">{post.data.title}</p>
           <p className="text-gray-600 text-center mb-3">
             <Link to={`/user/${user.id}`} className="text-blue-500">

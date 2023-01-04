@@ -21,7 +21,7 @@ const Home = () => {
 
   if (posts.data && users.data) {
     content = (
-      <div>
+      <div className="md:grid md:grid-cols-3 md:gap-3">
         {posts.data.map((post) => {
           const user = users.data.find((user) => user.id === post.userId).name;
           return <PostCard post={post} user={user} />;
