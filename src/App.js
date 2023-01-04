@@ -5,6 +5,7 @@ import Home from "./Views/Home";
 import About from "./Views/About";
 import Product from "./Views/Product";
 import Products from "./Views/Products";
+import Post from "./Views/Post";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/about" element={<About />}></Route>
             <Route path="/products" element={<Products />}></Route>
             <Route path="/products/:id" element={<Product />}></Route>
+            <Route path="/posts/:id" element={<Post />}></Route>
           </Routes>
         </section>
       </Router>
