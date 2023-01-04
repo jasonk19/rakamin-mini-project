@@ -25,7 +25,7 @@ const Navigation = () => {
 
   return (
     <nav className={isMobile ? "" : "w-1/3"}>
-      <span className={isMobile ? "text-xl" : "text-lg"}>
+      <span className={isMobile ? "text-xl" : ""}>
         {isMobile ? (
           <FontAwesomeIcon
             icon={faBars}

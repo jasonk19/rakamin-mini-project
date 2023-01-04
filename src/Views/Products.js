@@ -18,11 +18,16 @@ const Products = () => {
   }
 
   if (products.data) {
-    content = products.data.map((product) => (
-      <div key={product.id}>
-        <ProductCard product={product} />
+    content = (
+      <div className="grid grid-cols-3 gap-3">
+        {products.data.map((product) => (
+          <div key={product.id}>
+            <ProductCard product={product} />
+          </div>
+        ))}
+        ;
       </div>
-    ));
+    );
   }
 
   return (

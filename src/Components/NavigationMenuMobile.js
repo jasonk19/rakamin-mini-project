@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import routes from "../Utils/Routes";
-// import useMobile from "../Hooks/PageSize";
 
 const NavigationMenuMobile = (props) => {
   return (
     <div>
-      <p className="font-bold py-3">Rakamin Mini Project</p>
+      <p className="font-bold py-3">
+        <Link to="/">Rakamin Mini Project</Link>
+      </p>
       <ul>
         {routes.map((route, index) => (
           <li>
