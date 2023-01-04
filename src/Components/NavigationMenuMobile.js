@@ -6,7 +6,9 @@ const NavigationMenuMobile = (props) => {
   return (
     <div>
       <p className="font-bold py-3">
-        <Link to="/">Rakamin Mini Project</Link>
+        <Link to="/" onClick={props.classMenu}>
+          Rakamin Mini Project
+        </Link>
       </p>
       <ul>
         {routes.map((route, index) => (
