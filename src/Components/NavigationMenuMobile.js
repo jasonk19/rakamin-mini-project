@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import routes from "../Utils/Routes";
 // import useMobile from "../Hooks/PageSize";
 
 const NavigationMenuMobile = (props) => {
@@ -7,33 +8,19 @@ const NavigationMenuMobile = (props) => {
     <div>
       <p className="font-bold py-3">Rakamin Mini Project</p>
       <ul>
-        <li>
-          <Link
-            to="/"
-            onClick={props.classMenu}
-            className="text-blue-500 py-3 border-t border-b block"
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/about"
-            onClick={props.classMenu}
-            className="text-blue-500 py-3 border-b block"
-          >
-            About
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/products"
-            onClick={props.classMenu}
-            className="text-blue-500 py-3 border-b block"
-          >
-            Products
-          </Link>
-        </li>
+        {routes.map((route, index) => (
+          <li>
+            <Link
+              to={route.path}
+              onClick={props.classMenu}
+              className={`text-blue-500 py-3 border-b block ${
+                index === 0 ? "border-t" : ""
+              }`}
+            >
+              {route.title}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
